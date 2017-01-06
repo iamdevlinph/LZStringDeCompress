@@ -19,10 +19,10 @@
         document.getElementById('btn-decompress').addEventListener('click', function () {
             var str = document.getElementById('text-to-decompress').value;
             var str2 = LZString.decompressFromUTF16(str);
-            var str3 = JSON.parse(str2);
-            var str4 = JSON.stringify(str3, null, 2);
+            // var str3 = JSON.parse(str2);
+            // var str4 = JSON.stringify(str3, null, 2);
             var here = document.getElementById('content');
-            here.innerHTML = str4;
+            here.innerHTML = str2;
         });
     </script>
 </html>
