@@ -15,15 +15,14 @@
     <script src="https://rawgit.com/pieroxy/lz-string/master/libs/lz-string.min.js"></script>
     <script type="text/javascript">
         var x = document.getElementById('button-here');
-        x.append('<button id="btn-decompress">Decompress</button>');
-        document.getElementById('btn-decompress').addEventListener('click', resetEmotes, false);
-        function decompress() {
+        x.innerHTML = '<button id="btn-decompress">Decompress</button>';
+        document.getElementById('btn-decompress').addEventListener('click', function () {
             var str = document.getElementById('text-to-decompress').value;
             var str2 = LZString.decompressFromUTF16(str);
             var str3 = JSON.parse(str2);
             var str4 = JSON.stringify(str3, null, 2);
             var here = document.getElementById('content');
             here.innerHTML = str4;
-        }
+        });
     </script>
 </html>
