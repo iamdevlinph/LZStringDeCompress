@@ -5,17 +5,25 @@
     
     <body>
         <h1>Decompress</h1>
-        <textarea id="text-to-decompress"></textarea>
+        <textarea id="text-to-decompress" rows="10" cols="50"></textarea>
+        <br>
+        <div id="button-here"></div>
+        <br>
         <div id="content"></div>
     </body>
     
     <script src="https://rawgit.com/pieroxy/lz-string/master/libs/lz-string.min.js"></script>
     <script type="text/javascript">
-        var str = document.getElementById('text-to-decompress').value;
-        var str2 = LZString.decompressFromUTF16(str);
-        var str3 = JSON.parse(str2);
-        var str4 = JSON.stringify(str3, null, 2);
-        var here = document.getElementById('content');
-        here.innerHTML = str4;
+        var x = document.getElementById('button-here');
+        x.append('<button id="btn-decompress">Decompress</button>');
+        document.getElementById('btn-decompress').addEventListener('click', resetEmotes, false);
+        function decompress() {
+            var str = document.getElementById('text-to-decompress').value;
+            var str2 = LZString.decompressFromUTF16(str);
+            var str3 = JSON.parse(str2);
+            var str4 = JSON.stringify(str3, null, 2);
+            var here = document.getElementById('content');
+            here.innerHTML = str4;
+        }
     </script>
 </html>
