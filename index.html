@@ -5,12 +5,13 @@
     
     <body>
         <h1>Decompress</h1>
+        <textarea id="text-to-decompress"></textarea>
         <div id="content"></div>
     </body>
     
     <script src="https://rawgit.com/pieroxy/lz-string/master/libs/lz-string.min.js"></script>
     <script type="text/javascript">
-        var str = "";
+        var str = document.getElementById('text-to-decompress').value;
         var str2 = LZString.decompressFromUTF16(str);
         var str3 = JSON.parse(str2);
         var str4 = JSON.stringify(str3, null, 2);
